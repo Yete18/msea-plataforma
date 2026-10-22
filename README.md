@@ -39,3 +39,9 @@ Construido con [Laravel](https://laravel.com) (licencia MIT).
 - **Proyecto:** Plataforma educativa interactiva y gamificada MSEA
 - **Estudiante:** Yeray Eleazar Tintaya Espejo
 - **Materia:** Proyecto Integrador Intermedio II - UNIFRANZ
+
+## Autor
+
+- **Proyecto:** Plataforma educativa interactiva y gamificada MSEA
+- **Estudiante:** Yeray Eleazar Tintaya Espejo
+- **Materia:** Proyecto Integrador Intermedio II - UNIFRANZ
