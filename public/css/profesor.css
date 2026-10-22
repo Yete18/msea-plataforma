@@ -1,0 +1,162 @@
+/* ==========================================================================
+   MSEA · Panel del profesor. Va después de tokens, componentes y layout.
+   Solo tokens: el modo oscuro sale solo. Reemplaza a dashboard.profesor.css.
+   ========================================================================== */
+
+/* --- Inicio: cifras ------------------------------------------------------ */
+.stats-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e-4); }
+.stat-card { display: flex; align-items: center; gap: var(--e-4); padding: var(--e-4) var(--e-5); }
+.stat-icon-wrap {
+  width: 48px; height: 48px; flex: 0 0 48px; display: grid; place-items: center;
+  border-radius: var(--r-md); background: var(--menta); color: var(--verde-accion);
+}
+.stat-icon-wrap.bg-naranja { background: var(--aviso-fondo); color: var(--aviso); }
+.stat-icon-wrap.bg-azul { background: var(--info-fondo); color: var(--info); }
+.stat-icon-wrap.bg-morado { background: var(--superficie-2); color: var(--verde-bosque); }
+:root.theme-dark .stat-icon-wrap.bg-morado { color: var(--tinta); }
+.stat-value { font-family: var(--fuente-titulo); font-size: var(--t-xl); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat-label { font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); margin-top: var(--e-1); }
+
+.row-mid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: var(--e-5); align-items: start; }
+
+/* --- Listas del inicio ----------------------------------------------------- */
+.entregas-list, .alumnos-top-list, .atencion-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-2); }
+.entrega-item, .atencion-item, .alumno-top-item {
+  display: flex; align-items: center; gap: var(--e-3); padding: var(--e-3);
+  border-radius: var(--r-md); background: var(--superficie-2);
+}
+.entrega-avatar, .at-avatar {
+  width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center;
+  border-radius: var(--r-md); background: var(--superficie); color: var(--verde-accion);
+}
+.entrega-info, .at-info { flex: 1; min-width: 0; }
+.entrega-alumno, .at-nombre { font-weight: 800; font-size: var(--t-sm); overflow-wrap: anywhere; }
+.entrega-tarea { font-size: var(--t-xs); color: var(--texto-2); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.atencion-item { background: var(--aviso-fondo); border: 1px solid var(--aviso-borde); }
+.atencion-motivo { display: flex; align-items: center; gap: var(--e-1); font-size: var(--t-xs); font-weight: 700; color: var(--aviso); }
+.at-pos { width: 24px; text-align: center; font-family: var(--fuente-titulo); font-weight: 800; color: var(--texto-2); }
+.at-racha { display: flex; align-items: center; gap: var(--e-1); font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+.at-pts { font-size: var(--t-xs); font-weight: 800; padding: 3px 10px; border-radius: var(--r-total); background: var(--menta); color: var(--verde-bosque); white-space: nowrap; }
+:root.theme-dark .at-pts { color: var(--tinta); }
+
+/* Barras de práctica del grupo */
+.grupo-barras { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--e-2); height: 180px; align-items: end; }
+.gb-col { display: flex; flex-direction: column; align-items: center; gap: var(--e-1); height: 100%; }
+.gb-barra { flex: 1; width: 100%; max-width: 40px; display: flex; align-items: flex-end; overflow: hidden; border-radius: var(--r-sm) var(--r-sm) 0 0; background: var(--superficie-2); }
+.gb-barra span { display: block; width: 100%; background: var(--verde-marca); border-radius: var(--r-sm) var(--r-sm) 0 0; }
+.gb-col.hoy .gb-barra span { background: var(--verde-bosque); }
+:root.theme-dark .gb-col.hoy .gb-barra span { background: var(--verde-accion); }
+.gb-valor { min-height: 1em; font-size: var(--t-xs); font-weight: 800; color: var(--tinta); font-variant-numeric: tabular-nums; }
+.gb-dia { font-size: var(--t-xs); font-weight: 800; color: var(--texto-2); }
+.gb-col.hoy .gb-dia { color: var(--tinta); }
+
+/* --- Alumnos ----------------------------------------------------------------- */
+.alumnos-grid, .ejercicios-grid, .progreso-full-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: var(--e-4);
+}
+.alumno-card { display: grid; justify-items: center; gap: var(--e-2); text-align: center; }
+.ac-avatar {
+  width: 72px; height: 72px; display: grid; place-items: center; overflow: hidden;
+  border-radius: 50%; background: var(--menta); border: 3px solid var(--verde-marca);
+}
+.ac-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.ac-nombre { font-family: var(--fuente-titulo); font-size: var(--t-md); font-weight: 800; }
+.ac-instrumento { font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+.ac-nivel { font-size: var(--t-xs); font-weight: 800; padding: 3px 10px; border-radius: var(--r-total); background: var(--menta); color: var(--verde-bosque); }
+:root.theme-dark .ac-nivel { color: var(--tinta); }
+.ac-xp-track, .pi-track { width: 100%; height: 8px; border-radius: var(--r-total); background: var(--superficie-2); overflow: hidden; }
+.ac-xp-fill, .pi-fill { height: 100%; background: var(--verde-marca); border-radius: inherit; }
+.ac-stats { display: flex; gap: var(--e-3); flex-wrap: wrap; justify-content: center; font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+.ac-stats span { display: inline-flex; align-items: center; gap: 4px; }
+.alumno-card .btn-msea { width: 100%; }
+
+/* Progreso de un alumno (modal) */
+.progreso-mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: var(--e-2); }
+.progreso-mini { display: flex; gap: var(--e-3); align-items: center; padding: var(--e-3); border: 1px solid var(--borde); border-radius: var(--r-md); }
+.progreso-mini strong { display: block; font-size: var(--t-md); font-variant-numeric: tabular-nums; }
+.progreso-mini span:last-child { font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+#progreso-historial-lista { border: 1px solid var(--borde); border-radius: var(--r-md); }
+
+/* --- Tareas ----------------------------------------------------------------- */
+.tareas-tabla-wrap { position: relative; padding: 0; overflow-x: auto; }
+.tareas-tabla { min-width: 680px; }
+.tareas-tabla th, .tareas-tabla td { padding: var(--e-3) var(--e-4); text-align: left; border-bottom: 1px solid var(--borde); font-size: var(--t-sm); vertical-align: top; }
+.tareas-tabla th { background: var(--superficie-2); color: var(--texto-2); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: .04em; font-weight: 800; }
+.tareas-tabla tbody tr:last-child td { border-bottom: 0; }
+.tareas-tabla td .icon { color: var(--texto-2); }
+.tareas-tabla .acciones { display: flex; gap: var(--e-2); flex-wrap: wrap; }
+.tareas-tabla .empty-state { border: 0; }
+
+/* Entregas de una tarea (modal) */
+.entregas-detalle { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-4); }
+.entrega-detalle { display: grid; gap: var(--e-3); padding: var(--e-4); border: 1px solid var(--borde); border-radius: var(--r-md); background: var(--superficie); }
+.ed-cabecera { display: flex; gap: var(--e-2); align-items: center; flex-wrap: wrap; }
+.ed-cabecera .hint { margin-left: auto; }
+.ed-comentario { margin: 0; padding: var(--e-2) var(--e-3); border-left: 4px solid var(--verde-marca); border-radius: 0 var(--r-sm) var(--r-sm) 0; background: var(--menta); font-size: var(--t-sm); }
+.entrega-detalle audio { width: 100%; }
+.ed-acciones { display: flex; gap: var(--e-2); flex-wrap: wrap; }
+.ed-form { gap: var(--e-3); }
+
+/* --- Ejercicios y progreso grupal ------------------------------------------- */
+.ejercicio-card { display: grid; justify-items: center; gap: var(--e-2); text-align: center; }
+.ej-icon { color: var(--verde-accion); }
+.ej-icon .icon { width: 2rem; height: 2rem; }
+.ej-nombre { font-family: var(--fuente-titulo); font-weight: 800; }
+.ej-desc { font-size: var(--t-xs); color: var(--texto-2); font-weight: 600; }
+.ej-chips { display: flex; gap: var(--e-1); flex-wrap: wrap; justify-content: center; }
+.ej-chip { font-size: var(--t-xs); font-weight: 800; padding: 3px 10px; border-radius: var(--r-total); background: var(--menta); color: var(--verde-bosque); }
+:root.theme-dark .ej-chip { color: var(--tinta); }
+.progreso-item { display: grid; gap: var(--e-2); }
+.pi-row-header { display: flex; justify-content: space-between; gap: var(--e-2); align-items: baseline; }
+.pi-inst-name { font-weight: 800; }
+.pi-pct { font-size: var(--t-xs); font-weight: 800; color: var(--texto-2); font-variant-numeric: tabular-nums; }
+
+/* --- Mensajes ---------------------------------------------------------------- */
+.mensajes-layout { display: grid; grid-template-columns: minmax(260px, 380px) minmax(0, 1fr); gap: var(--e-5); align-items: start; }
+.mensajes-lista { list-style: none; margin: var(--e-3) 0 0; padding: 0; display: grid; gap: var(--e-2); }
+.mensaje-item { padding: var(--e-3) var(--e-4); border: 1px solid var(--borde); border-radius: var(--r-md); background: var(--superficie); }
+.mensaje-item.enviado { background: var(--menta); }
+.mensaje-item.no-leido { border-left: 4px solid var(--info); }
+.mensaje-meta { margin: 0 0 var(--e-1); font-size: var(--t-xs); color: var(--texto-2); font-weight: 600; }
+.mensaje-asunto { margin: 0 0 2px; font-weight: 800; }
+.mensaje-texto { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--t-sm); }
+
+/* --- Biblioteca: contraste en oscuro de biblioteca.css --------------------- */
+:root.theme-dark .escala-tarjeta .chips span { color: var(--tinta); }
+:root.theme-dark .escala-tarjeta .chips span.dif-intermedio { background: var(--aviso-fondo); color: var(--aviso); }
+:root.theme-dark .escala-tarjeta .chips span.dif-dificil { background: var(--error-fondo); color: var(--error); }
+
+/* --- Adaptación ------------------------------------------------------------------- */
+@media (max-width: 1180px) {
+  .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row-mid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) { .mensajes-layout { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) {
+  .stat-card { flex-direction: column; align-items: flex-start; gap: var(--e-2); padding: var(--e-4); }
+  .grupo-barras { gap: var(--e-1); height: 150px; }
+  .entrega-item { flex-wrap: wrap; }
+  .app-barra__acciones #btn-nueva-tarea { display: none; }
+}
+
+/* --- Formulario de tarea -------------------------------------------------- */
+.tipo-tarea { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tt-opcion span { min-height: 48px; border-width: 1px; }
+.tt-opcion input:checked + span { border-width: 2px; }
+@media (max-width: 560px) { .tipo-tarea { grid-template-columns: minmax(0, 1fr); } }
+
+/* --- Tareas en el celular: cada fila es una tarjeta ------------------------- */
+@media (max-width: 720px) {
+  .tareas-tabla { min-width: 0; }
+  .tareas-tabla thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  .tareas-tabla, .tareas-tabla tbody, .tareas-tabla tr, .tareas-tabla td { display: block; width: 100%; }
+  .tareas-tabla tr { padding: var(--e-3) var(--e-4); border-bottom: 1px solid var(--borde); }
+  .tareas-tabla tbody tr:last-child { border-bottom: 0; }
+  .tareas-tabla td { padding: var(--e-1) 0; border: 0; }
+  .tareas-tabla td:first-child { font-size: var(--t-base); padding-bottom: var(--e-2); }
+  .tareas-tabla td:nth-child(2)::before { content: 'Para: '; }
+  .tareas-tabla td:nth-child(3)::before { content: 'Fecha límite: '; }
+  .tareas-tabla td:nth-child(4)::before { content: 'Entregas: '; }
+  .tareas-tabla td::before { font-weight: 800; color: var(--texto-2); font-size: var(--t-xs); }
+  .tareas-tabla td:last-child { padding-top: var(--e-2); }
+}

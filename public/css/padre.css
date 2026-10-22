@@ -1,0 +1,104 @@
+/* ==========================================================================
+   MSEA · Seguimiento familiar. Va después de tokens, componentes y layout.
+   Reemplaza a dashboard-padre.css.
+   ========================================================================== */
+.app-main [id] { scroll-margin-top: calc(var(--alto-barra) + var(--e-4)); }
+
+/* Selector de hijo */
+.hijos-selector { display: flex; gap: var(--e-2); flex-wrap: wrap; }
+.hijo-pill {
+  min-height: 44px; padding: 8px 20px; border: 1px solid var(--borde-fuerte); border-radius: var(--r-total);
+  background: var(--superficie); color: var(--tinta); font-weight: 800; cursor: pointer;
+}
+.hijo-pill:hover { background: var(--menta); }
+.hijo-pill[aria-selected="true"] { background: var(--verde-bosque); border-color: var(--verde-bosque); color: var(--texto-lateral); }
+:root.theme-dark .hijo-pill[aria-selected="true"] { background: var(--verde-accion); border-color: var(--verde-accion); color: var(--sobre-accion); }
+
+.hijo__grid { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: var(--e-6); align-items: start; }
+.hijo__informe { display: grid; gap: var(--e-6); min-width: 0; }
+
+/* Ficha del estudiante */
+.ficha { position: sticky; top: calc(var(--alto-barra) + var(--e-6)); display: grid; justify-items: center; gap: var(--e-2); text-align: center; }
+.ficha__foto {
+  width: 96px; height: 96px; display: grid; place-items: center; overflow: hidden; margin-bottom: var(--e-2);
+  border-radius: 50%; background: var(--menta); color: var(--verde-bosque); border: 3px solid var(--verde-marca);
+}
+.ficha__foto img { width: 100%; height: 100%; object-fit: cover; }
+.ficha__foto .icon { width: 44px; height: 44px; stroke-width: 1.6; }
+:root.theme-dark .ficha__foto { color: var(--tinta); }
+.ficha__nombre { font-size: var(--t-lg); }
+.ficha__dato { font-size: var(--t-sm); color: var(--texto-2); font-weight: 700; }
+.ficha__cifras {
+  width: 100%; margin: var(--e-3) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  border: 1px solid var(--borde); border-radius: var(--r-md); overflow: hidden; background: var(--borde);
+}
+.ficha__cifras > div { display: grid; gap: 2px; padding: var(--e-3); background: var(--superficie); align-content: space-between; }
+.ficha__cifras dt { font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+.ficha__cifras dd { margin: 0; font-family: var(--fuente-titulo); font-size: var(--t-lg); font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* Resumen de la semana */
+.semana { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--e-5); align-items: center; background: var(--verde-bosque); border-color: var(--verde-bosque); color: var(--texto-lateral); }
+.semana .eyebrow { color: var(--texto-lateral-2); }
+.semana h3 { color: var(--texto-lateral); font-size: var(--t-lg); margin-top: var(--e-1); }
+.semana__consejo { display: flex; gap: var(--e-2); align-items: flex-start; margin-top: var(--e-3); font-size: var(--t-sm); font-weight: 700; color: var(--texto-lateral); }
+.semana__consejo .icon { color: var(--verde-claro); margin-top: 2px; }
+.semana__dias { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--e-2); }
+.semana__dias li { display: grid; justify-items: center; gap: var(--e-1); }
+.semana__marca {
+  width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .3); color: #12201A;
+}
+.semana__dias li.activo .semana__marca { background: var(--verde-marca); border-color: var(--verde-marca); }
+.semana__dia { font-size: var(--t-xs); font-weight: 800; color: var(--texto-lateral-2); }
+
+/* Barras de minutos */
+.barras { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--e-2); height: 200px; align-items: end; margin: var(--e-4) 0 var(--e-3); }
+.barras__col { display: flex; flex-direction: column; align-items: center; gap: var(--e-1); height: 100%; }
+.barras__pista { flex: 1; width: 100%; max-width: 44px; display: flex; align-items: flex-end; overflow: hidden; border-radius: var(--r-sm) var(--r-sm) 0 0; background: var(--superficie-2); }
+.barras__pista span { display: block; width: 100%; border-radius: var(--r-sm) var(--r-sm) 0 0; background: var(--verde-marca); }
+.barras__valor { min-height: 1.2em; font-size: var(--t-xs); font-weight: 800; color: var(--tinta); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.barras__dia { font-size: var(--t-xs); font-weight: 800; color: var(--texto-2); }
+
+/* Tareas */
+.tareas { list-style: none; margin: var(--e-4) 0 0; padding: 0; display: grid; gap: var(--e-3); }
+.tarea { padding: var(--e-3) var(--e-4); border: 1px solid var(--borde); border-radius: var(--r-md); }
+.tarea__cabecera { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--e-3); }
+.tarea__cabecera strong { overflow-wrap: anywhere; }
+.tarea__nota { font-family: var(--fuente-titulo); font-size: var(--t-lg); font-weight: 800; color: var(--exito); line-height: 1; white-space: nowrap; }
+.tarea__nota small { font-family: var(--fuente); font-size: var(--t-xs); color: var(--texto-2); }
+.tarea__meta { margin-top: var(--e-1); font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+.tarea__comentario {
+  display: grid; gap: 2px; margin-top: var(--e-3); padding: var(--e-2) var(--e-3);
+  border-left: 4px solid var(--verde-marca); border-radius: 0 var(--r-sm) var(--r-sm) 0; background: var(--menta); font-size: var(--t-sm);
+}
+.tarea__comentario span { font-size: var(--t-xs); font-weight: 800; color: var(--texto-2); }
+
+/* Logros */
+.logros { list-style: none; margin: var(--e-4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: var(--e-3); }
+.logro { display: grid; justify-items: center; gap: var(--e-1); padding: var(--e-4) var(--e-3); text-align: center; border: 1px solid var(--borde); border-radius: var(--r-md); }
+.logro__icono { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--aviso-fondo); color: var(--aviso); }
+.logro__icono .icon { width: 24px; height: 24px; }
+.logro small { font-size: var(--t-xs); color: var(--texto-2); font-weight: 600; }
+
+/* Avisos y mensajes */
+.comunicacion { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--e-6); align-items: start; }
+.avisos, .conversacion { list-style: none; margin: var(--e-4) 0 0; padding: 0; display: grid; gap: var(--e-2); }
+.avisos li:not(.empty-state) { display: grid; gap: 2px; padding: var(--e-3) var(--e-4); border: 1px solid var(--borde); border-radius: var(--r-md); font-size: var(--t-sm); }
+.avisos li.nueva { border-left: 4px solid var(--info); }
+.avisos time, .conversacion__meta { font-size: var(--t-xs); color: var(--texto-2); font-weight: 600; }
+.mensaje-form { margin-top: var(--e-4); }
+.conversacion { margin-top: var(--e-5); }
+.conversacion li { display: grid; gap: 2px; padding: var(--e-3) var(--e-4); border: 1px solid var(--borde); border-radius: var(--r-md); font-size: var(--t-sm); }
+.conversacion li.enviado { background: var(--menta); }
+.conversacion p { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media (max-width: 1100px) {
+  .hijo__grid, .comunicacion { grid-template-columns: minmax(0, 1fr); }
+  .ficha { position: static; }
+  .semana { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .semana__dias { justify-content: space-between; gap: var(--e-1); }
+  .barras { height: 160px; gap: var(--e-1); }
+  .barras__valor { font-size: .6875rem; }
+}

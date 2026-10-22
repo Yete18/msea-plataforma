@@ -1,0 +1,320 @@
+/* ==========================================================================
+   MSEA · Portada
+   Verde del sistema como protagonista. La foto principal va recortada con la
+   silueta de un violín; debajo, lo que hace la fundación con fotos grandes y
+   la plataforma de práctica. Tipografías del sistema: Baloo 2 y Nunito.
+   ========================================================================== */
+
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/nunito-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/nunito-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 800; font-display: swap; src: url('../fonts/nunito-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Baloo 2'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/baloo-2-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Baloo 2'; font-style: normal; font-weight: 800; font-display: swap; src: url('../fonts/baloo-2-latin-800-normal.woff2') format('woff2'); }
+
+:root {
+  /* Paleta oficial MSEA (la misma de msea-theme.css) */
+  --verde-bosque: #315C3A;
+  --verde-hondo: #24452B;
+  --verde: #8CC63F;
+  --verde-claro: #A8D858;
+  --menta: #F2F8E9;
+  --marfil: #F7F9F5;
+  --tinta: #26332B;
+  --gris: #5C6A62;
+  --dorado: #E6B84A;
+  --foco: #E6B84A;
+
+  --ancho: 1180px;
+  --lado: max(24px, calc((100% - var(--ancho)) / 2));
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body.portada {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--marfil);
+  color: var(--tinta);
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.sprite-oculto { position: absolute; width: 0; height: 0; overflow: hidden; }
+.saltar {
+  position: absolute; left: 8px; top: -60px; z-index: 2000;
+  background: var(--dorado); color: var(--tinta); padding: 10px 16px; border-radius: 8px;
+  font-weight: 800; text-decoration: none;
+}
+.saltar:focus { top: 8px; }
+
+a:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; border-radius: 6px; }
+
+h1, h2, h3 { font-family: 'Baloo 2', 'Nunito', sans-serif; text-wrap: balance; }
+
+/* ── Cabecera (sobre el verde) ─────────────────────────────────────────── */
+.p-cabecera {
+  background: var(--verde-bosque);
+  padding: 20px var(--lado) 0;
+}
+.p-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--marfil);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+.p-marca img { border-radius: 12px; background: #fff; }
+.p-marca strong {
+  display: block;
+  font-family: 'Baloo 2', 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--verde-claro);
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.p-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  overflow: hidden;
+  gap: clamp(24px, 5vw, 80px);
+  padding: clamp(24px, 4vw, 48px) var(--lado) clamp(48px, 7vw, 96px);
+  background:
+    radial-gradient(120% 90% at 85% 40%, #3D6E46 0%, transparent 60%),
+    var(--verde-bosque);
+  color: var(--marfil);
+}
+
+/* Pentagrama de fondo: cinco líneas verde claro que cruzan la cabecera. */
+.p-pentagrama {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 78%;
+  height: calc(4 * clamp(18px, 2.4vw, 30px) + 2px);
+  background: repeating-linear-gradient(to bottom,
+    rgba(168, 216, 88, 0.30) 0 2px,
+    transparent 2px clamp(18px, 2.4vw, 30px));
+}
+
+.p-hero-texto { max-width: 36rem; }
+
+.p-hero h1 {
+  margin: 0 0 18px;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6.2vw, 4.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--marfil);
+}
+
+.p-bajada {
+  margin: 0 0 30px;
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  color: #E3EFD8;
+  max-width: 34rem;
+}
+
+.p-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 34px;
+  border-radius: 999px;
+  background: var(--verde);
+  color: var(--tinta);
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  box-shadow: inset 0 -4px 0 rgba(38, 51, 43, 0.22), 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.p-cta:hover { background: var(--verde-claro); }
+.p-cta:active { transform: translateY(2px); }
+
+.p-registro { margin: 14px 0 0; font-size: 0.98rem; color: #E3EFD8; }
+.p-registro a { color: var(--marfil); font-weight: 800; text-underline-offset: 3px; }
+
+/* La foto principal con silueta de violín. */
+.p-violin {
+  display: block;
+  height: clamp(460px, 86vh, 840px);
+  width: auto;
+  aspect-ratio: 108 / 204;
+  margin-block: -8px -40px;
+  overflow: visible;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35));
+  animation: violin-entra 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+}
+.p-violin-mastil { fill: var(--verde-hondo); stroke: var(--verde-claro); stroke-width: 1; }
+.p-violin-voluta { fill: var(--verde-hondo); stroke: var(--verde-claro); stroke-width: 1.2; }
+.p-violin-borde { fill: none; stroke: var(--verde-claro); stroke-width: 2.2; }
+.p-violin-cuerdas path { fill: none; stroke: rgba(247, 249, 245, 0.55); stroke-width: 0.35; }
+.p-violin-puente { fill: var(--dorado); }
+
+@keyframes violin-entra {
+  from { opacity: 0; transform: translateY(24px) rotate(-2deg); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Lo que hace la fundación ──────────────────────────────────────────── */
+.p-hacemos {
+  padding: clamp(56px, 8vw, 112px) var(--lado) clamp(48px, 7vw, 96px);
+}
+.p-hacemos h2,
+.p-casa h2 {
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  line-height: 1.05;
+  color: var(--verde-bosque);
+}
+.p-intro { margin: 0; max-width: 40rem; font-size: 1.12rem; color: var(--gris); }
+
+.p-mosaico {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 56px) clamp(20px, 3vw, 40px);
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.p-pieza img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 22px;
+  background: var(--menta);
+}
+.p-pieza h3 {
+  margin: 18px 0 4px;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.15;
+  color: var(--verde-bosque);
+}
+.p-pieza p { margin: 0; color: var(--gris); max-width: 46ch; }
+
+/* Mosaico de tamaños distintos: dos grandes y dos verticales, en diagonal. */
+.p-pieza-orquesta   { grid-column: 1 / 8; }
+.p-pieza-orquesta img { aspect-ratio: 3 / 2; }
+.p-pieza-clases     { grid-column: 8 / 13; }
+.p-pieza-clases img { aspect-ratio: 4 / 5; object-position: 40% 50%; }
+.p-pieza-conciertos { grid-column: 1 / 6; }
+.p-pieza-conciertos img { aspect-ratio: 4 / 5; object-position: 55% 50%; }
+.p-pieza-valores    { grid-column: 6 / 13; }
+.p-pieza-valores img { aspect-ratio: 3 / 2; }
+
+.p-instrumentos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.p-instrumentos li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  background: var(--menta);
+  color: var(--verde-bosque);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.p-instrumentos svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── La práctica sigue en casa ─────────────────────────────────────────── */
+.p-casa {
+  background: var(--menta);
+  border-top: 6px solid var(--verde);
+  padding: clamp(56px, 8vw, 104px) var(--lado);
+}
+.p-casa-dentro {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+.p-casa-texto p { margin: 0 0 18px; color: var(--gris); font-size: 1.1rem; max-width: 34rem; }
+.p-casa-texto ul { margin: 0; padding: 0; list-style: none; }
+.p-casa-texto li {
+  position: relative;
+  padding: 10px 0 10px 30px;
+  border-top: 1px solid #D5E6BF;
+}
+.p-casa-texto li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 19px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--verde);
+  box-shadow: 0 0 0 3px #DCEFC2;
+}
+.p-casa-texto strong { color: var(--verde-bosque); }
+
+.p-casa-captura { margin: 0; }
+.p-casa-captura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid #D5E6BF;
+  box-shadow: 0 24px 48px rgba(49, 92, 58, 0.18);
+}
+.p-casa-captura figcaption { margin-top: 10px; font-size: 0.9rem; color: var(--gris); }
+
+/* ── Pie ─────────────────────────────────────────────────────────────── */
+.p-pie {
+  background: var(--verde-bosque);
+  color: #E3EFD8;
+  padding: 32px var(--lado) 100px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.p-pie p { margin: 10px 0 0; }
+.p-pie .enlaces-legales a,
+.p-pie .enlaces-legales .enlace-boton { color: var(--marfil); }
+.p-pie .enlaces-legales a:focus-visible,
+.p-pie .enlaces-legales .enlace-boton:focus-visible { outline-color: var(--dorado); }
+
+/* ── Tablet y móvil ───────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .p-hero { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .p-hero-texto { justify-self: stretch; }
+  .p-violin { height: clamp(420px, 70vh, 580px); margin-block: 8px 0; }
+  .p-pentagrama { top: auto; bottom: 22%; }
+  .p-casa-dentro { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .p-mosaico { grid-template-columns: minmax(0, 1fr); }
+  .p-pieza-orquesta, .p-pieza-clases, .p-pieza-conciertos, .p-pieza-valores { grid-column: 1 / -1; }
+  .p-pieza-clases img, .p-pieza-conciertos img { aspect-ratio: 4 / 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-violin { animation: none; }
+  .p-cta { transition: none; }
+}

@@ -1,0 +1,123 @@
+/* Piezas comunes de las paginas publicas: aviso de cookies, enlaces legales, boton de WhatsApp,
+   campo trampa anti-spam. Colores con contraste AA (texto >= 4.5:1). */
+:root {
+  --pub-tinta: #26332B;
+  --pub-verde: #2F5D37;
+  --pub-verde-hover: #244A2C;
+  --pub-borde: #CBD5CE;
+  --pub-fondo: #FFFFFF;
+}
+
+.campo-trampa {
+  position: absolute !important;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.enlaces-legales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  font-size: 0.85rem;
+}
+.enlaces-legales a,
+.enlaces-legales .enlace-boton {
+  color: var(--pub-verde);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: none;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 2px;
+  font: inherit;
+  cursor: pointer;
+}
+.enlaces-legales a:hover,
+.enlaces-legales .enlace-boton:hover { color: var(--pub-verde-hover); }
+.enlaces-legales a:focus-visible,
+.enlaces-legales .enlace-boton:focus-visible { outline: 3px solid #1F6FEB; outline-offset: 2px; border-radius: 4px; }
+
+/* ── Aviso de cookies ── */
+.cookie-banner {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--pub-fondo);
+  color: var(--pub-tinta);
+  border: 1px solid var(--pub-borde);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(38, 51, 43, 0.18);
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-titulo { font-size: 1rem; font-weight: 800; margin: 0 0 4px; }
+.cookie-texto p { margin: 0; }
+.cookie-texto a { color: var(--pub-verde); text-decoration: underline; }
+.cookie-acciones { display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  font: inherit;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 2px solid var(--pub-verde);
+}
+.cookie-btn-pri { background: var(--pub-verde); color: #FFFFFF; }
+.cookie-btn-pri:hover { background: var(--pub-verde-hover); border-color: var(--pub-verde-hover); }
+.cookie-btn-sec { background: #FFFFFF; color: var(--pub-verde); }
+.cookie-btn-sec:hover { background: #EEF5EF; }
+.cookie-btn:focus-visible { outline: 3px solid #1F6FEB; outline-offset: 2px; }
+
+/* ── Boton de WhatsApp ── */
+.boton-whatsapp {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px 0 14px;
+  border-radius: 999px;
+  background: #0B6B5D;
+  color: #FFFFFF;
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(11, 107, 93, 0.35);
+  transition: transform 0.2s ease, background-color 0.2s ease, bottom 0.2s ease;
+}
+.boton-whatsapp:hover { background: #09574C; transform: translateY(-2px); }
+.boton-whatsapp:focus-visible { outline: 3px solid #1F6FEB; outline-offset: 3px; }
+body.cookies-visibles .boton-whatsapp { bottom: 150px; }
+
+@media (max-width: 640px) {
+  .cookie-banner { flex-direction: column; align-items: stretch; gap: 10px; left: 8px; right: 8px; bottom: 8px; padding: 12px 14px; font-size: 0.84rem; line-height: 1.4; }
+  .cookie-titulo { display: none; }
+  .cookie-acciones .cookie-btn { flex: 1 1 130px; min-height: 44px; }
+  .boton-whatsapp { right: 12px; bottom: 12px; padding: 0 14px 0 12px; }
+  body.cookies-visibles .boton-whatsapp { bottom: 160px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boton-whatsapp { transition: none; }
+}

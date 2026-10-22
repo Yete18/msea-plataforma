@@ -1,0 +1,199 @@
+/* ==========================================================================
+   MSEA · Páginas de acceso: iniciar sesión, crear cuenta y recuperar la
+   contraseña. Va después de tokens.css y componentes.css, solo con tokens.
+   Reemplaza a login.css, registro.css y password-reset.css (y a Bootstrap).
+   ========================================================================== */
+body { background: var(--fondo); }
+
+/* --- Estructura: panel de marca + formulario ------------------------------ */
+.login-page, .registro-page, .auth-flow-layout {
+  min-height: 100vh; min-height: 100dvh;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+/* Panel de marca (login y recuperación) */
+.auth-brand-panel {
+  position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: var(--e-8);
+  padding: var(--e-12) clamp(var(--e-6), 5vw, var(--e-12)); overflow: hidden;
+  background: var(--verde-bosque); color: var(--texto-lateral);
+}
+.auth-brand-panel::after {
+  /* Pentagrama sutil de fondo */
+  content: ''; position: absolute; inset: auto -10% 18% -10%; height: 120px; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, .07) 0 1px, transparent 1px 24px);
+}
+.auth-brand-logo { display: inline-flex; align-items: center; gap: var(--e-3); color: inherit; text-decoration: none; }
+.auth-brand-logo img { width: 52px; height: 52px; border-radius: var(--r-md); background: #fff; }
+.auth-brand-logo span { display: grid; }
+.auth-brand-logo strong { font-size: var(--t-base); }
+.auth-brand-logo small { font-size: var(--t-xs); color: var(--texto-lateral-2); }
+.auth-brand-logo:hover { color: inherit; }
+.auth-brand-content { position: relative; z-index: 1; display: grid; gap: var(--e-5); max-width: 520px; }
+.auth-brand-content h2 { color: var(--texto-lateral); font-size: clamp(2rem, 3.4vw, var(--t-3xl)); line-height: 1.08; }
+.auth-brand-content p { color: var(--texto-lateral-2); font-size: var(--t-md); }
+.auth-metrics { margin: var(--e-2) 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--e-3); }
+.auth-metrics > div { padding: var(--e-4) var(--e-5); border-radius: var(--r-lg); background: var(--verde-hondo); border: 1px solid rgba(255, 255, 255, .1); }
+.auth-metrics dt { font: 800 var(--t-xl)/1 var(--fuente-titulo); color: var(--verde-claro); font-variant-numeric: tabular-nums; }
+.auth-metrics dd { margin: var(--e-1) 0 0; font-size: var(--t-sm); color: var(--texto-lateral-2); }
+.auth-brand-footer { position: relative; z-index: 1; font-size: var(--t-xs); color: var(--texto-lateral-2); }
+
+/* Panel de marca del registro (foto y pasos) */
+.reg-panel { position: relative; overflow: hidden; display: grid; place-items: center; padding: var(--e-10) var(--e-8); background: var(--verde-bosque); color: var(--texto-lateral); }
+.panel-particles { position: absolute; inset: 0; pointer-events: none; }
+.panel-particle { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .06); }
+.panel-content { position: relative; z-index: 1; width: min(460px, 100%); display: grid; justify-items: center; gap: var(--e-6); text-align: center; }
+.panel-logo { justify-self: start; display: inline-flex; align-items: center; gap: var(--e-3); color: inherit; text-decoration: none; text-align: left; }
+.panel-logo:hover { color: inherit; }
+.panel-logo-img { width: 52px; height: 52px; border-radius: var(--r-md); background: #fff; }
+.panel-logo-text { display: grid; }
+.panel-logo-text strong { font-size: var(--t-base); }
+.panel-logo-text small { font-size: var(--t-xs); color: var(--texto-lateral-2); }
+.panel-illustration { position: relative; width: min(340px, 80%); aspect-ratio: 1; }
+.panel-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 6px solid rgba(255, 255, 255, .18); box-shadow: var(--sombra-3); }
+.panel-img-fallback { display: none; }
+.panel-img.error + .panel-img-fallback { position: absolute; inset: 0; display: grid; place-items: center; border-radius: 50%; background: var(--verde-hondo); }
+.panel-steps { display: flex; align-items: center; gap: var(--e-3); padding: var(--e-2) var(--e-4); border-radius: var(--r-total); background: var(--verde-hondo); }
+.panel-step { display: inline-flex; align-items: center; gap: var(--e-2); font-size: var(--t-sm); font-weight: 800; color: var(--texto-lateral-2); }
+.ps-number { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--texto-lateral-2); font-size: var(--t-xs); }
+.panel-step.active { color: var(--texto-lateral); }
+.panel-step.active .ps-number { background: var(--verde-marca); border-color: var(--verde-marca); color: #12201A; }
+.panel-step-line { width: 28px; height: 2px; background: rgba(255, 255, 255, .25); }
+.panel-subtitle { font: 800 var(--t-lg) var(--fuente-titulo); color: var(--texto-lateral); }
+.p-float { position: absolute; color: rgba(255, 255, 255, .16); pointer-events: none; }
+.p-float .icon { width: 40px; height: 40px; stroke-width: 1.4; }
+.pf-1 { top: 18%; right: 6%; } .pf-2 { top: 42%; left: 4%; } .pf-3 { bottom: 14%; left: 10%; } .pf-4 { bottom: 22%; right: 8%; }
+
+/* --- Formulario -------------------------------------------------------- */
+.login-form-section, .reg-form-section, .auth-flow-form {
+  position: relative; display: grid; place-items: center; padding: var(--e-12) var(--e-6);
+  background: var(--superficie);
+}
+.form-container, .reset-panel { width: min(440px, 100%); display: grid; gap: var(--e-5); }
+.back-link, .auth-back-button {
+  position: absolute; top: var(--e-6); left: var(--e-6); display: inline-flex; align-items: center; gap: var(--e-2);
+  min-height: 44px; padding: 0 var(--e-3); border-radius: var(--r-md);
+  color: var(--tinta); font-weight: 800; font-size: var(--t-sm); text-decoration: none;
+}
+.back-link:hover, .auth-back-button:hover { background: var(--superficie-2); color: var(--tinta); }
+.reset-panel .auth-back-button { position: static; justify-self: start; margin-left: calc(-1 * var(--e-3)); }
+.form-header, .reset-header { display: grid; gap: var(--e-2); }
+.form-title, .reset-header h1 { font-size: var(--t-2xl); }
+.form-subtitle, .reset-header p { color: var(--texto-2); }
+.reset-logo { width: 56px; height: 56px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--borde); }
+.auth-alertas { display: grid; gap: var(--e-2); }
+.auth-alertas:empty { display: none; }
+
+.login-form, #registro-form, .reset-form { display: grid; gap: var(--e-5); }
+.reset-form { gap: var(--e-3); }
+.reset-form label { font-weight: 800; font-size: var(--t-sm); }
+.reset-form button, .btn-login, .btn-next, .btn-submit, .btn-goto-login {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--e-2); width: 100%; min-height: 52px;
+  border: 0; border-radius: var(--r-md); background: var(--verde-accion); color: var(--sobre-accion);
+  font: inherit; font-weight: 800; font-size: var(--t-md); text-decoration: none; cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.reset-form button { margin-top: var(--e-2); }
+.reset-form button:hover, .btn-login:hover, .btn-next:hover, .btn-submit:hover, .btn-goto-login:hover { background: var(--verde-accion-hover); color: var(--sobre-accion); }
+.btn-login:active, .btn-next:active, .btn-submit:active { transform: translateY(1px); }
+.btn-text { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+.field-group { display: grid; gap: var(--e-2); }
+.field-label { display: flex; align-items: center; gap: var(--e-2); font-weight: 800; font-size: var(--t-sm); color: var(--tinta); }
+.field-label .icon, .label-icon { color: var(--verde-accion); }
+.field-label small { font-weight: 600; color: var(--texto-2); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-4); }
+.input-wrapper { position: relative; }
+.field-input { padding-right: 48px !important; }
+.field-input.invalid { border-color: var(--error); }
+.field-input.valid { border-color: var(--exito); }
+.input-status { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.toggle-password {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px;
+  display: grid; place-items: center; border: 0; border-radius: var(--r-sm); background: transparent; color: var(--texto-2); cursor: pointer;
+}
+.toggle-password:hover { background: var(--superficie-2); color: var(--tinta); }
+.field-error:empty { display: none; }
+.form-options { display: flex; justify-content: flex-end; margin-top: calc(-1 * var(--e-2)); }
+.forgot-link, .register-link, .login-link { font-weight: 800; color: var(--verde-accion); }
+.forgot-link { display: inline-flex; align-items: center; min-height: 44px; }
+.form-alert { padding: var(--e-3) var(--e-4); border-radius: var(--r-md); border: 1px solid var(--error-borde); background: var(--error-fondo); color: var(--error); font-weight: 700; font-size: var(--t-sm); }
+.form-footer { text-align: center; color: var(--texto-2); }
+
+/* Selectores de instrumento y nivel (registro) */
+.instrument-btn, .level-btn {
+  display: grid; justify-items: center; gap: var(--e-1); min-height: 76px; padding: var(--e-3) var(--e-2);
+  border: 1px solid var(--borde-fuerte); border-radius: var(--r-md); background: var(--superficie); color: var(--tinta);
+  font: inherit; font-weight: 800; font-size: var(--t-sm); cursor: pointer; text-align: center;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.instrument-btn:hover, .level-btn:hover { border-color: var(--verde-accion); background: var(--menta); }
+.instrument-btn.active, .level-btn.active { border: 2px solid var(--verde-accion); background: var(--menta); }
+.inst-emoji, .level-icon { color: var(--verde-accion); }
+
+/* Google */
+.login-separador { display: flex; align-items: center; gap: var(--e-3); color: var(--texto-2); font-size: var(--t-sm); }
+.login-separador::before, .login-separador::after { content: ''; flex: 1; height: 1px; background: var(--borde); }
+.login-google { display: grid; gap: var(--e-3); justify-items: center; }
+.login-google-nota { font-size: var(--t-xs); color: var(--texto-2); text-align: center; }
+
+/* Registro */
+.progress-bar { height: 8px; margin-top: var(--e-2); border-radius: var(--r-total); background: var(--superficie-2); overflow: hidden; }
+.progress-fill { height: 100%; width: 50%; border-radius: inherit; background: var(--verde-marca); transition: width .3s ease; }
+.form-step { display: none; gap: var(--e-5); }
+.form-step.active { display: grid; }
+.instrument-selector { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e-2); }
+.instrument-btn { min-height: 96px; }
+.inst-emoji .icon { width: 2rem; height: 2rem; }
+.level-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr)); gap: var(--e-2); }
+.level-btn { min-height: 64px; }
+.strength-bar { height: 6px; border-radius: var(--r-total); background: var(--superficie-2); overflow: hidden; }
+.strength-fill { height: 100%; width: 0; border-radius: inherit; background: var(--error); transition: width .2s ease, background-color .2s ease; }
+.strength-label { font-size: var(--t-xs); font-weight: 700; color: var(--texto-2); }
+.strength-label:empty { display: none; }
+.strength-fill[data-nivel="1"] { width: 25%; background: var(--error); }
+.strength-fill[data-nivel="2"] { width: 50%; background: var(--aviso); }
+.strength-fill[data-nivel="3"] { width: 75%; background: var(--verde-marca); }
+.strength-fill[data-nivel="4"] { width: 100%; background: var(--exito); }
+.strength-label[data-nivel="1"] { color: var(--error); }
+.strength-label[data-nivel="2"] { color: var(--aviso); }
+.strength-label[data-nivel="3"], .strength-label[data-nivel="4"] { color: var(--exito); }
+.consentimiento-label { display: flex; gap: var(--e-3); align-items: flex-start; font-size: var(--t-sm); font-weight: 600; color: var(--texto-2); }
+.consentimiento-label input { margin-top: 3px; flex: 0 0 auto; }
+.btn-row { display: grid; grid-template-columns: auto 1fr; gap: var(--e-3); }
+.btn-back {
+  display: inline-flex; align-items: center; gap: var(--e-2); min-height: 52px; padding: 0 var(--e-5);
+  border: 1px solid var(--borde-fuerte); border-radius: var(--r-md); background: var(--superficie); color: var(--tinta); font: inherit; font-weight: 800; cursor: pointer;
+}
+.btn-back:hover { background: var(--superficie-2); }
+.success-screen { display: grid; justify-items: center; gap: var(--e-3); text-align: center; padding: var(--e-6) 0; }
+.success-emoji .icon { width: 64px; height: 64px; color: var(--exito); }
+.success-title { font-size: var(--t-2xl); }
+.success-msg { color: var(--texto-2); }
+
+/* Enlaces legales */
+.enlaces-legales { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--e-2) var(--e-4); font-size: var(--t-xs); }
+.enlaces-legales a, .enlace-boton { color: var(--texto-2); text-decoration: underline; text-underline-offset: 2px; }
+.enlace-boton { border: 0; background: none; padding: 0; font: inherit; cursor: pointer; }
+.enlaces-legales a, .enlaces-legales .enlace-boton { display: inline-flex; align-items: center; min-height: 44px; }
+.enlaces-legales a:hover, .enlace-boton:hover { color: var(--tinta); }
+
+/* --- Adaptación ----------------------------------------------------------- */
+@media (max-width: 960px) {
+  .login-page, .registro-page, .auth-flow-layout { grid-template-columns: minmax(0, 1fr); }
+  .auth-brand-panel, .reg-panel { display: none; }
+  .login-form-section, .reg-form-section, .auth-flow-form { place-items: start center; padding: calc(var(--e-12) + var(--e-6)) var(--e-4) var(--e-10); }
+}
+@media (max-width: 480px) {
+  .instrument-selector { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .field-row { grid-template-columns: minmax(0, 1fr); }
+  .form-title, .reset-header h1 { font-size: var(--t-xl); }
+  .btn-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Aviso de cookies y enlaces legales (publico-comun.css) en el tema oscuro */
+:root.theme-dark .enlaces-legales a, :root.theme-dark .enlaces-legales .enlace-boton { color: var(--texto-2); }
+:root.theme-dark .enlaces-legales a:hover, :root.theme-dark .enlaces-legales .enlace-boton:hover { color: var(--tinta); }
+:root.theme-dark .cookie-banner { background: var(--superficie-2); color: var(--tinta); border-color: var(--borde-fuerte); }
+:root.theme-dark .cookie-texto a { color: var(--verde-accion); }
+:root.theme-dark .cookie-btn-pri { background: var(--verde-accion); border-color: var(--verde-accion); color: var(--sobre-accion); }
+:root.theme-dark .cookie-btn-sec { background: var(--superficie); color: var(--tinta); border-color: var(--borde-fuerte); }

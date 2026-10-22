@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PHP_EXTENSIONS: mbstring, dom, xml, zip, fileinfo, pdo_sqlite, pdo_pgsql
+
+jobs:
+  estilo:
+    name: Estilo (Pint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: vendor/bin/pint --test
+
+  pruebas-sqlite:
+    name: Pruebas (SQLite, PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - name: Preparar .env
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+      - run: php artisan test
+
+  pruebas-pgsql:
+    name: Pruebas (PostgreSQL 16)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          # Coinciden con phpunit.pgsql.xml.
+          POSTGRES_DB: msea_testing
+          POSTGRES_USER: msea
+          POSTGRES_PASSWORD: msea
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U msea -d msea_testing"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - name: Preparar .env
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+      - run: vendor/bin/phpunit -c phpunit.pgsql.xml
+
+  auditoria:
+    name: Auditoría de dependencias
+    runs-on: ubuntu-latest
+    # Informativo mientras se actualizan las dependencias con avisos conocidos.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+      - run: composer audit --locked

@@ -1,0 +1,73 @@
+/* Biblioteca técnica: tarjetas de escalas, configuración de la tarea y constructor de ritmos. */
+@font-face { font-family: 'Bravura'; font-style: normal; font-weight: 400; font-display: block; src: url('../fonts/bravura.woff2') format('woff2'); }
+
+.smufl { font-family: 'Bravura'; font-style: normal; line-height: 1; }
+#modal-tarea.modal-ancho { max-width: 780px; }
+
+/* Tipo de tarea */
+.tipo-tarea { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.tipo-tarea legend { font-weight: 700; font-size: .9rem; margin-bottom: .35rem; }
+.tt-opcion { position: relative; }
+.tt-opcion input { position: absolute; opacity: 0; }
+.tt-opcion span { display: flex; align-items: center; gap: .45rem; padding: .7rem .8rem; border: 2px solid var(--gris-borde, #E5E9E6); border-radius: 10px; font-weight: 800; cursor: pointer; }
+.tt-opcion input:checked + span { border-color: var(--msea-green, #8CC63F); background: var(--verde-suave, #F2F8E9); color: var(--msea-green-dark, #315C3A); }
+.tt-opcion input:focus-visible + span { outline: 3px solid rgba(77, 126, 168, .55); outline-offset: 2px; }
+
+/* Configuración de la escala */
+.escala-config { display: grid; gap: .9rem; padding: .9rem; border: 1px solid var(--gris-borde, #E5E9E6); border-radius: 10px; background: var(--verde-fondo, #F7F9F5); }
+.esc-grupo { border: 0; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.esc-grupo legend { font-weight: 700; font-size: .9rem; margin-bottom: .3rem; }
+.esc-opciones { display: flex; flex-wrap: wrap; gap: .35rem .9rem; }
+.esc-opciones label.inline, #esc-digitacion-campo { display: inline-flex; align-items: center; gap: .35rem; font-weight: 700; font-size: .9rem; }
+.field-row-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+.esc-presets, .paleta { display: flex; flex-wrap: wrap; gap: .35rem; }
+.chip-ritmo { display: inline-flex; align-items: center; gap: .35rem; min-height: 2.1rem; padding: .25rem .65rem; border-radius: 999px; border: 1px solid var(--gris-borde, #E5E9E6); background: var(--blanco, #fff); color: var(--gris-texto, #26332B); font: inherit; font-weight: 700; font-size: .82rem; cursor: pointer; }
+.chip-ritmo:hover { border-color: var(--msea-green, #8CC63F); }
+.chip-ritmo.activo { border-color: var(--msea-green-dark, #315C3A); background: var(--verde-suave, #F2F8E9); color: var(--msea-green-dark, #315C3A); }
+.chip-ritmo .smufl { font-size: 1.6rem; position: relative; top: .28em; }
+
+.esc-patron { display: grid; gap: .6rem; }
+.celdas { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.celda { display: flex; align-items: center; gap: .5rem; padding: .45rem .55rem; border: 2px solid var(--gris-borde, #E5E9E6); border-radius: 10px; background: var(--blanco, #fff); cursor: pointer; }
+.celda.activa { border-color: var(--msea-blue, #4D7EA8); }
+.celda-num { flex: 0 0 auto; font-weight: 800; font-size: .8rem; color: var(--gris-suave, #68736D); min-width: 4.6rem; }
+.celda-figuras { flex: 1; display: flex; flex-wrap: wrap; align-items: center; gap: .1rem .35rem; min-height: 2rem; }
+.celda-figuras .smufl { font-size: 1.7rem; position: relative; top: .2em; }
+.celda-vacia { color: var(--gris-suave, #68736D); font-size: .82rem; font-weight: 700; }
+.celda-pulsos { font-size: .78rem; font-weight: 800; color: var(--gris-suave, #68736D); white-space: nowrap; }
+.celda button { border: 0; background: transparent; color: var(--gris-suave, #68736D); cursor: pointer; padding: .2rem; border-radius: 6px; }
+.celda button:hover { color: var(--msea-red, #D95C5C); background: #FBE9E9; }
+
+.esc-resumen { display: flex; align-items: center; justify-content: space-between; gap: .7rem; flex-wrap: wrap; padding: .65rem .75rem; border-radius: 8px; background: var(--blanco, #fff); border: 1px dashed var(--msea-green, #8CC63F); }
+.esc-resumen p { margin: 0; font-weight: 700; font-size: .88rem; flex: 1 1 260px; }
+
+/* Biblioteca del profesor */
+.biblioteca-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.escala-tarjeta { display: grid; gap: .55rem; align-content: start; }
+.escala-tarjeta h3 { margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 1.2rem; }
+.escala-tarjeta .notas { margin: 0; font-weight: 700; font-size: .88rem; color: var(--gris-suave, #68736D); }
+.escala-tarjeta .chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+.escala-tarjeta .chips span { padding: .2rem .55rem; border-radius: 999px; background: var(--verde-suave, #F2F8E9); color: var(--msea-green-dark, #315C3A); font-weight: 700; font-size: .76rem; }
+.escala-tarjeta .chips span.dif-intermedio { background: #FBF3DF; color: #7A5C10; }
+.escala-tarjeta .chips span.dif-dificil { background: #FBE9E9; color: #A33F3F; }
+.escala-tarjeta .acciones { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+:root.theme-dark .escala-config { background: var(--superficie-2); border-color: var(--borde-fuerte); }
+:root.theme-dark .celda, :root.theme-dark .chip-ritmo, :root.theme-dark .esc-resumen { background: var(--superficie-2); color: var(--tinta); border-color: var(--borde-fuerte); }
+:root.theme-dark .tt-opcion input:checked + span, :root.theme-dark .chip-ritmo.activo { background: var(--menta); color: var(--tinta); border-color: var(--verde-accion); }
+
+@media (max-width: 640px) {
+  .tipo-tarea, .field-row-3 { grid-template-columns: 1fr; }
+  .celda-num { min-width: 3.4rem; }
+}
+
+/* Resultado de escala en las entregas */
+.resultado-escala { padding: .6rem .75rem; border-radius: 8px; background: var(--verde-suave, #F2F8E9); margin: .4rem 0; }
+.resultado-escala p { margin: 0; font-size: .88rem; }
+.resultado-escala p strong { display: inline-flex; align-items: center; gap: .3rem; }
+.puntos-escala { display: flex; flex-wrap: wrap; gap: 3px; margin: .45rem 0 .2rem; }
+.puntos-escala span { width: 12px; height: 12px; border-radius: 3px; }
+.puntos-escala .p-bien { background: var(--msea-green-dark, #315C3A); }
+.puntos-escala .p-medio { background: var(--msea-mint-300, #A8D858); }
+.puntos-escala .p-flojo { background: var(--msea-gold, #E6B84A); }
+:root.theme-dark .resultado-escala { background: var(--menta); }

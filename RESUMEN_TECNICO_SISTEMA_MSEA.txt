@@ -1,0 +1,395 @@
+RESUMEN TECNICO DEL SISTEMA MSEA
+
+Este documento explica de forma sencilla cuatro puntos importantes del sistema:
+el uso de Eloquent, la arquitectura, la seguridad y el manejo de API o comunicacion
+entre las pantallas y el backend.
+
+
+1. USO DE ELOQUENT
+
+En el proyecto MSEA se utiliza Eloquent, que es el ORM de Laravel. Un ORM permite
+trabajar con las tablas de la base de datos como si fueran clases de PHP. Esto ayuda
+a que el codigo sea mas ordenado, facil de leer y mas mantenible.
+
+Eloquent se esta usando principalmente en la carpeta:
+
+app/Models
+
+En esta carpeta estan los modelos que representan las tablas reales de la base de
+datos PostgreSQL. Por ejemplo:
+
+- Usuario representa la tabla usuarios.
+- Rol representa la tabla roles.
+- Estudiante representa la tabla estudiantes.
+- Profesor representa la tabla profesores.
+- Elenco representa la tabla elencos.
+- Instrumento representa la tabla instrumentos.
+- Tarea representa la tabla tareas.
+- Progreso representa la tabla progreso.
+- PasswordResetCode representa la tabla password_reset_codes.
+
+Cada modelo indica que tabla utiliza, cual es su llave primaria y que campos pueden
+ser llenados de forma segura mediante la propiedad fillable. Esto evita que se
+guarden datos no permitidos por accidente.
+
+Un ejemplo importante es el modelo Usuario, porque el sistema no usa la tabla
+tradicional users de Laravel, sino la tabla real usuarios. Por eso Usuario.php es el
+modelo principal del sistema, y User.php se mantiene solo como un puente temporal
+para que Laravel siga funcionando correctamente.
+
+Eloquent tambien se usa en los Services. Por ejemplo:
+
+- AuthService usa Usuario, Rol, Estudiante, Seccion e Instrumento para registrar
+  estudiantes e iniciar sesion.
+- AdminDashboardService usa Usuario, Profesor, Estudiante, Elenco e Instrumento
+  para gestionar profesores, estudiantes y elencos.
+- PasswordResetService usa Usuario y PasswordResetCode para la recuperacion de
+  contrasena.
+- StudentDashboardService usa Usuario y Estudiante para obtener informacion del
+  estudiante y actualizar su perfil.
+
+Tambien se usa carga anticipada de relaciones, conocida como eager loading. Esto
+sirve para evitar que el sistema haga demasiadas consultas innecesarias a la base de
+datos. Por ejemplo, al buscar un usuario para iniciar sesion, tambien se carga su rol.
+De esta forma se evita consultar primero el usuario y luego hacer otra consulta
+separada para saber su rol.
+
+Sin embargo, no todo se paso a Eloquent. Algunas consultas complejas se mantienen
+con SQL porque PostgreSQL las maneja mejor. Por ejemplo, reportes, rankings,
+conteos, string_agg y otras consultas agregadas siguen usando SQL cuando resulta mas
+eficiente y seguro.
+
+
+2. ARQUITECTURA DEL SISTEMA
+
+El sistema esta construido con Laravel y PostgreSQL. La arquitectura se organizo por
+capas para que el codigo no quede mezclado en un solo lugar.
+
+Las partes principales son:
+
+app/Http/Controllers
+
+Aqui estan los controladores. Su trabajo es recibir la peticion del usuario y
+devolver una vista o una respuesta. Por ejemplo:
+
+- AuthController maneja login, registro y cierre de sesion.
+- PasswordResetController maneja recuperacion de contrasena.
+- DashboardEstudianteController maneja el panel del estudiante.
+- DashboardProfesorController maneja el panel del profesor.
+- DashboardAdminController maneja el panel del director o administrador.
+
+app/Http/Requests
+
+Aqui estan las validaciones. En vez de validar directamente dentro del controlador,
+se usan Form Requests. Esto hace que el controlador este mas limpio. Por ejemplo:
+
+- LoginRequest valida correo y contrasena (desde octubre de 2026 el rol ya no
+  se elige: sale de la cuenta).
+- RegisterRequest valida los datos del registro de estudiantes.
+- StoreProfesorRequest valida los datos para crear profesores.
+- StoreElencoRequest y UpdateElencoRequest validan los datos de los elencos.
+- UpdateStudentProfileRequest valida el perfil del estudiante.
+- ResetPasswordRequest valida la nueva contrasena.
+
+app/Services
+
+Aqui esta la logica importante del sistema. Los Services evitan que los
+controladores se vuelvan demasiado grandes. Por ejemplo:
+
+- AuthService contiene la logica de autenticacion y registro.
+- PasswordResetService contiene la logica de codigos de recuperacion.
+- StudentDashboardService arma la informacion que ve el estudiante.
+- AdminDashboardService arma la informacion que ve el director y realiza acciones
+  administrativas.
+- ProfilePhotoService maneja las fotos de perfil.
+
+app/Models
+
+Aqui estan los modelos Eloquent que representan la base de datos.
+
+app/Http/Middleware
+
+Aqui estan los filtros de acceso. El sistema usa:
+
+- auth.session para verificar que el usuario tenga una sesion activa.
+- role para verificar que el usuario tenga el rol correcto.
+
+routes/web.php
+
+Aqui estan las rutas del sistema. Las rutas estan separadas por tipo de usuario:
+
+- estudiante accede a dashboard-estudiante.
+- profesor accede a dashboard-profesor.
+- director accede a dashboard-admin.
+
+database/migrations
+
+Aqui esta la migracion real del esquema MSEA, que permite reproducir la base de
+datos desde cero sin depender solamente de una base ya creada manualmente.
+
+En resumen, la arquitectura separa responsabilidades: los controladores reciben la
+peticion, los Requests validan, los Services procesan, los Models comunican con la
+base de datos y los Middleware protegen el acceso.
+
+
+3. SEGURIDAD DEL SISTEMA
+
+El sistema tiene varias medidas de seguridad importantes.
+
+Primero, el login no guarda la contrasena en texto plano. Las contrasenas se guardan
+usando Hash, lo que significa que se almacenan cifradas o protegidas. Si alguien
+revisara la base de datos, no deberia ver la contrasena real del usuario.
+
+Esta logica se encuentra principalmente en:
+
+app/Services/AuthService.php
+
+Tambien se mantiene compatibilidad con contrasenas antiguas. Si una contrasena vieja
+estaba guardada sin hash, al iniciar sesion correctamente el sistema la actualiza y
+la guarda de forma segura.
+
+Segundo, el sistema usa sesiones. Cuando un usuario inicia sesion, se guardan datos
+basicos como:
+
+- usuario_id
+- nombre
+- apellido_paterno
+- correo
+- rol
+
+Estos datos permiten saber quien esta usando el sistema y que permisos tiene.
+
+Tercero, las rutas estan protegidas por middleware. Esto evita que un estudiante
+entre al panel del director o que un profesor entre al panel del estudiante. Esta
+proteccion esta en:
+
+app/Http/Middleware/AuthenticateSession.php
+app/Http/Middleware/RoleMiddleware.php
+
+Y se aplica en:
+
+routes/web.php
+
+Cuarto, se usan Form Requests para validar datos antes de procesarlos. Esto ayuda a
+evitar datos incorrectos, campos vacios, correos repetidos o IDs que no existen.
+Por ejemplo, cuando el director asigna un estudiante a un elenco, el sistema valida
+que el estudiante y el elenco existan.
+
+Quinto, se cuida el mass assignment. Los modelos tienen definido que campos se
+pueden llenar. Esto evita que un usuario envie campos ocultos o no permitidos para
+modificar informacion sensible.
+
+Sexto, la recuperacion de contrasena usa codigos temporales. El codigo se guarda
+protegido con Hash y tiene vencimiento. Ademas, cuando se usa, queda marcado como
+usado para evitar reutilizacion.
+
+Esta parte esta en:
+
+app/Services/PasswordResetService.php
+app/Http/Controllers/PasswordResetController.php
+
+Septimo, la foto de perfil se maneja de forma mas profesional. Antes podia guardarse
+como base64 en la base de datos. Ahora las fotos nuevas se guardan como archivo en:
+
+storage/app/public/avatars
+
+Y en la base de datos solo se guarda la ruta. Las fotos antiguas en base64 siguen
+funcionando para no romper compatibilidad.
+
+Esta logica esta en:
+
+app/Services/ProfilePhotoService.php
+
+
+4. MANEJO DE API Y COMUNICACION ENTRE FRONTEND Y BACKEND
+
+El sistema MSEA actualmente no esta construido como una API REST completa separada.
+Es decir, no tiene una carpeta de rutas api.php funcionando como backend separado
+para una aplicacion externa. El sistema trabaja principalmente con rutas web de
+Laravel, vistas Blade y formularios.
+
+Las rutas principales estan en:
+
+routes/web.php
+
+Estas rutas reciben formularios del login, registro, recuperacion de contrasena y
+acciones del dashboard.
+
+Aun asi, algunas partes del sistema si usan respuestas tipo API o JSON. El ejemplo
+mas claro esta en el perfil del estudiante. Cuando el estudiante actualiza sus datos
+desde el dashboard, el frontend envia la informacion al backend usando JavaScript,
+y el backend responde con JSON.
+
+Esto se usa en:
+
+app/Http/Controllers/DashboardEstudianteController.php
+
+La funcion updateProfile devuelve una respuesta JSON con:
+
+- message
+- estudiante
+
+En el frontend, esta comunicacion se maneja en:
+
+public/js/dashboard-estudiante.js
+
+Alli se utiliza fetch para enviar los datos del perfil a la ruta:
+
+/dashboard-estudiante/perfil
+
+Esto permite actualizar informacion del estudiante sin recargar toda la pagina.
+
+Tambien se usan variables JavaScript generadas desde Blade. Por ejemplo, en la vista
+del dashboard estudiante se envia informacion desde Laravel hacia JavaScript usando:
+
+window.MSEA_ESTUDIANTE
+window.MSEA_RANKING
+
+Estas variables permiten que el frontend tenga los datos del estudiante y del
+ranking para mostrarlos en pantalla.
+
+En el dashboard profesor tambien se usa una tecnica similar:
+
+window.MSEA_PROFESOR
+window.MSEA_ALUMNOS
+window.MSEA_TAREAS
+
+Esto esta en:
+
+resources/views/dashboard-profesor.blade.php
+public/js/dashboard.profesor.js
+
+En resumen, el sistema no maneja una API REST completa todavia, pero si tiene
+comunicacion parcial tipo API mediante respuestas JSON y JavaScript. Esto es util
+para actualizar partes de la interfaz, como el perfil del estudiante, sin cambiar
+toda la arquitectura del proyecto.
+
+Como mejora futura, cuando el sistema crezca, se podria crear una API formal para
+acciones como tareas, ejercicios, retroalimentacion, entregas y archivos. Por ahora,
+la estructura actual es suficiente para una aplicacion web academica con Laravel.
+
+
+CONCLUSION GENERAL
+
+El sistema MSEA esta organizado de forma profesional para un proyecto academico. Usa
+Laravel, PostgreSQL, modelos Eloquent, Services, Form Requests y Middleware. La
+seguridad se maneja con sesiones, roles, validaciones, contrasenas protegidas y
+control de acceso. La comunicacion con el frontend se realiza principalmente por
+rutas web, vistas Blade y algunas respuestas JSON.
+
+Esto permite que el sistema sea funcional, entendible y preparado para seguir
+creciendo sin romper lo que ya existe.
+
+
+5. ACTUALIZACION DE OCTUBRE 2026 (AUDITORIA Y CORRECCION)
+
+Esta seccion resume los cambios hechos despues de la auditoria. El detalle tecnico
+esta en ARCHITECTURE.md, SECURITY.md, TESTING.md y DEPLOYMENT.md.
+
+Roles
+
+Ahora hay cuatro roles: director, profesor, estudiante y padre (o madre). El padre
+ve el avance de sus hijos vinculados: practica, tareas, notas, logros y mensajes con
+el profesor. El director puede activar o desactivar cuentas, cambiar roles, vincular
+padres con hijos, gestionar catalogos, cursos y comunicados, y ver la auditoria.
+
+Seguridad
+
+- El login ya no acepta el hash guardado como si fuera la contrasena.
+- Hay limite de intentos en login, recuperacion y API movil.
+- Un estudiante ya no puede ver ni entregar tareas de otros (se corrigio un IDOR).
+- Si una cuenta se desactiva o cambia de rol, la sesion se corta en la siguiente
+  peticion. Si se cambia la contrasena, se cierran las otras sesiones.
+- Los correos se guardan en minusculas, para que la recuperacion funcione aunque
+  se escriban en mayusculas.
+- Las grabaciones y materiales se guardan en una carpeta privada y solo se
+  descargan si la persona tiene permiso.
+- Hay una tabla de auditoria con las acciones importantes.
+- Las paginas envian cabeceras de seguridad y una politica CSP.
+- Los CSV exportados no pueden ejecutar formulas al abrirse en Excel.
+
+Gamificacion
+
+- Toda la XP queda registrada en un libro (xp_movimientos). Cada premio tiene una
+  clave unica, asi que repetir una accion no da XP dos veces.
+- El servidor mide el tiempo de las practicas: las muy cortas no suman XP y hay un
+  maximo diario.
+- Las preguntas de teoria se corrigen en el servidor y la respuesta correcta no se
+  envia al navegador.
+- Las tareas pasan por los estados entregada, devuelta (para corregir) y
+  calificada. La XP se da una sola vez, al calificar.
+- El sistema NO evalua tecnicamente la afinacion ni el ritmo del instrumento. Los
+  datos que envia el telefono se guardan como "no verificados".
+
+API movil
+
+La app usa tokens propios. En la base de datos solo se guarda su hash. Los tokens
+vencen a los 30 dias, cada usuario puede tener como maximo 5 sesiones, y se pueden
+cerrar una por una o todas a la vez. La app Flutter guarda el token de forma
+cifrada y lee la direccion del servidor al compilar. En produccion exige HTTPS.
+
+Interfaz
+
+- Se aplico la paleta oficial verde de MSEA y las fuentes Nunito y Baloo 2.
+- Se reemplazaron los emojis por iconos SVG, incluidos iconos propios de violin,
+  viola, violonchelo y contrabajo.
+- Se quitaron los datos simulados: si no hay datos, el panel lo dice.
+- Los textos y los errores de validacion estan en espanol.
+
+Pruebas
+
+Hay 104 pruebas automaticas y todas pasan tanto en SQLite como en PostgreSQL 16.
+Tambien hay una prueba en navegador que intenta inyectar codigo (XSS) en los
+cuatro paneles. La app Flutter tiene pruebas escritas, pero aun no se han ejecutado
+porque no habia Flutter disponible en el entorno de trabajo.
+
+
+6. AUDITORIA INTEGRAL Y REDISENO (17 DE OCTUBRE DE 2026)
+
+Se reviso todo el sistema (seguridad, base de datos, diseno, accesibilidad y
+rendimiento) y se corrigio en seis fases. El informe completo esta en
+docs/INFORME_AUDITORIA_INTEGRAL_2026-10-17.md.
+
+Seguridad y datos
+
+- Cada profesor ve y califica solo a sus propios alumnos, tambien dentro de un
+  elenco. Los archivos de menores son privados y la reversion de la base de datos
+  en produccion esta bloqueada salvo autorizacion expresa.
+- Las contrasenas antiguas que estaban en texto plano ahora tienen hash.
+- La base de datos tiene claves foraneas con indice y restricciones (CHECK) para
+  los estados. Los catalogos (roles, niveles, instrumentos y logros) se cargan con
+  un seeder apto para produccion.
+- La politica de seguridad del navegador (CSP) ya no permite estilos en linea.
+
+Inicio de sesion
+
+- La persona escribe solo su correo y su contrasena; el sistema sabe su rol. La
+  app movil funciona igual. Es una prueba que la fundacion puede revertir.
+- El estudiante ya no puede cambiar su CI, direccion ni fecha de nacimiento: lo
+  corrige la direccion.
+
+Gamificacion
+
+- El ranking compara a cada estudiante solo con su elenco y muestra solo el
+  nombre de pila de los demas.
+- La racha admite un dia de descanso y el aviso es amable, sin presion.
+- En teoria, la XP completa se gana al acertar al primer intento; despues de un
+  error se gana una cuarta parte.
+- La racha y la XP ya no se repiten en varios lugares de la pantalla de inicio.
+
+Diseno y accesibilidad
+
+- Los cuatro paneles y las paginas de acceso usan un sistema de diseno propio
+  (tokens, componentes y estructura comun) con tema claro y oscuro. Se retiraron
+  Bootstrap y Lucide.
+- Todo el texto cumple el contraste minimo y todo boton mide al menos 44 px.
+- Los errores de los formularios se anuncian junto a su campo, los dialogos se
+  manejan con teclado y cambiar de seccion se anuncia al lector de pantalla.
+- El tema oscuro sigue la preferencia del sistema y se aplica sin destello.
+
+Pruebas
+
+Hay 211 pruebas automaticas (1329 aserciones) que pasan en PostgreSQL 16 y en
+SQLite, y recorridos en navegador para los cuatro roles. La
+app Flutter sigue sin compilarse en un telefono: requiere el SDK de Flutter.
+

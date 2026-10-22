@@ -1,0 +1,131 @@
+/* ==========================================================================
+   MSEA · Tokens de diseño (única fuente de verdad, FE-03)
+   Colores, tipografía, espacios, radios y sombras de todos los paneles.
+   Regla de contraste: el verde de marca (#8CC63F) es solo RELLENO con texto
+   oscuro; para texto o botones con texto blanco se usa --verde-accion.
+   ========================================================================== */
+:root {
+  /* Marca */
+  --verde-marca: #8CC63F;      /* relleno; texto encima: --tinta (6,5:1) */
+  --verde-accion: #3E7A1E;     /* botón principal, enlaces; blanco encima 5,2:1 */
+  --verde-accion-hover: #336818;
+  --sobre-accion: #FFFFFF;      /* texto sobre --verde-accion */
+  --verde-bosque: #315C3A;     /* barra lateral, títulos */
+  --verde-hondo: #24452B;
+  --verde-claro: #A8D858;      /* relleno decorativo, nunca texto sobre claro */
+  --menta: #F2F8E9;
+  --marfil: #F7F9F5;
+  --dorado: #E6B84A;           /* solo relleno (logros, racha) */
+
+  /* Superficies y texto */
+  --fondo: var(--marfil);
+  --superficie: #FFFFFF;
+  --superficie-2: #F4F7F2;
+  --borde: #DDE4DE;
+  --borde-fuerte: #B9C6BC;
+  --tinta: #26332B;            /* texto principal 12,6:1 sobre blanco */
+  --texto-2: #5C6A62;          /* texto secundario 5,6:1 sobre blanco */
+  --texto-lateral: #E8EEE9;    /* texto sobre --verde-bosque 6,6:1 */
+  --texto-lateral-2: #C9D6CC;  /* secundario sobre --verde-bosque 5,1:1 */
+
+  /* Estados (texto / fondo) */
+  --exito: #1D6B3A;   --exito-fondo: #ECF7EF;   --exito-borde: #A9D8B7;
+  --aviso: #8A6100;   --aviso-fondo: #FFF6DF;   --aviso-borde: #EBCB7A;
+  --error: #B42318;   --error-fondo: #FEF3F2;   --error-borde: #F2B8B2;
+  --info: #175CD3;    --info-fondo: #EFF4FF;    --info-borde: #B2CCFF;
+
+  --foco: #E6B84A;
+  --anillo-foco: 0 0 0 3px var(--superficie), 0 0 0 5px var(--verde-accion);
+
+  /* Tipografía */
+  --fuente: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fuente-titulo: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --t-xs: .8125rem;   /* 13 */
+  --t-sm: .875rem;    /* 14 */
+  --t-base: 1rem;     /* 16 */
+  --t-md: 1.125rem;   /* 18 */
+  --t-lg: 1.375rem;   /* 22 */
+  --t-xl: 1.75rem;    /* 28 */
+  --t-2xl: 2.25rem;   /* 36 */
+  --t-3xl: 3rem;      /* 48 */
+
+  /* Espacios (base 4) */
+  --e-1: 4px; --e-2: 8px; --e-3: 12px; --e-4: 16px; --e-5: 20px;
+  --e-6: 24px; --e-8: 32px; --e-10: 40px; --e-12: 48px;
+
+  /* Radios */
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-total: 999px;
+
+  /* Sombras */
+  --sombra-1: 0 1px 2px rgba(38, 51, 43, .06);
+  --sombra-2: 0 4px 16px rgba(38, 51, 43, .07);
+  --sombra-3: 0 16px 40px rgba(38, 51, 43, .16);
+
+  /* Medidas del layout */
+  --ancho-lateral: 264px;
+  --alto-barra: 60px;
+  --ancho-contenido: 1240px;
+
+  color-scheme: light;
+}
+
+/* Tema oscuro: clase en <html>, puesta antes de pintar por partials/tema-inicial
+   (elección guardada o, si no hay, la preferencia del sistema). */
+:root.theme-dark {
+  --verde-accion: #A8D858;
+  --verde-accion-hover: #BCE57A;
+  --sobre-accion: #12201A;
+  --verde-bosque: #12201A;
+  --verde-hondo: #0D1813;
+  --menta: #1F3326;
+  --fondo: #141C17;
+  --superficie: #1C2620;
+  --superficie-2: #232F28;
+  --borde: #33433A;
+  --borde-fuerte: #4A5E52;
+  --tinta: #E8EEE9;
+  --texto-2: #AEBBB3;
+  --texto-lateral: #E8EEE9;
+  --texto-lateral-2: #AEBBB3;
+
+  --exito: #8FD9A8;   --exito-fondo: #143222;   --exito-borde: #2C6B45;
+  --aviso: #F2CC6B;   --aviso-fondo: #33290F;   --aviso-borde: #6B5520;
+  --error: #FDA29B;   --error-fondo: #3A1714;   --error-borde: #7A2E27;
+  --info: #9DBBFF;    --info-fondo: #14213D;    --info-borde: #2E4A86;
+
+  --anillo-foco: 0 0 0 3px var(--superficie), 0 0 0 5px var(--verde-accion);
+  --sombra-2: 0 4px 16px rgba(0, 0, 0, .35);
+  --sombra-3: 0 16px 40px rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
+
+/* Puente para el CSS antiguo de los paneles que aún no se migran:
+   sus variables apuntan a los tokens, así no quedan dos paletas distintas.
+   Se declaran también en body: así siguen al tema oscuro (:root.theme-dark). */
+:root, body {
+  --msea-ivory: var(--marfil);
+  --msea-mint-100: var(--menta);
+  --msea-mint-300: var(--verde-claro);
+  --msea-green: var(--verde-marca);
+  --msea-green-dark: var(--verde-bosque);
+  --msea-ink: var(--tinta);
+  --msea-muted: var(--texto-2);
+  --msea-border: var(--borde);
+  --msea-gold: var(--dorado);
+  --msea-red: var(--error);
+  --msea-blue: var(--info);
+  /* biblioteca.css */
+  --blanco: var(--superficie);
+  --gris-borde: var(--borde);
+  --gris-suave: var(--texto-2);
+  --gris-texto: var(--tinta);
+  --verde-fondo: var(--superficie-2);
+  --verde-suave: var(--menta);
+}
+
+/* En oscuro, el "verde oscuro" antiguo se usa como texto y como relleno:
+   pasa al verde de acción, legible sobre fondos oscuros. */
+:root.theme-dark, :root.theme-dark body {
+  --msea-green-dark: var(--verde-accion);
+  --msea-ink: var(--tinta);
+}

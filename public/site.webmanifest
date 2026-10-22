@@ -1,0 +1,14 @@
+{
+  "name": "MSEA - Movimiento Sinfónico de El Alto",
+  "short_name": "MSEA",
+  "description": "Plataforma de práctica musical del Movimiento Sinfónico de El Alto.",
+  "lang": "es",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4faf5",
+  "theme_color": "#8CC63F",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

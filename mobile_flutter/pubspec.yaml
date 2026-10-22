@@ -1,0 +1,25 @@
+name: msea_mobile
+description: Aplicacion movil de MSEA conectada al backend Laravel (API /api/mobile).
+publish_to: "none"
+version: 0.2.0+2
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"  # Flutter 3.27 o superior (CardThemeData, Color.withValues)
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  # Guarda el token en Keychain (iOS) / Keystore (Android) en lugar de memoria o SharedPreferences.
+  flutter_secure_storage: ^9.2.2
+  # Inicio de sesion con Google (Android, iOS y web).
+  google_sign_in: ^7.2.0
+  google_sign_in_web: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,922 @@
+[
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Al aire y dedos 0-1-2-3 · 2 alto",
+        "dificultad": "facil",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 100
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 1-2 · 2 alto",
+        "dificultad": "facil",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 101
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 2-3 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 102
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 3-4 · 2 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 103
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 1-2-3-4 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 104
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 4-3-2-1 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 105
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Escalera 1-2-3-4-3-2 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 106
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Saltos 1-3-2-4 · 2 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 107
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Al aire y dedos 0-1-2-3 · 2 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 108
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 1-2 · 2 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 109
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 2-3 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 110
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 3-4 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 111
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 1-2-3-4 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 112
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 4-3-2-1 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 113
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Escalera 1-2-3-4-3-2 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 114
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Saltos 1-3-2-4 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 115
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Al aire y dedos 0-1-2-3 · 1 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 116
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 1-2 · 1 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 117
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 2-3 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 118
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 3-4 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 119
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 1-2-3-4 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 120
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 4-3-2-1 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 121
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Escalera 1-2-3-4-3-2 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 122
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Saltos 1-3-2-4 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 123
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Al aire y dedos 0-1-2-3 · 3 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 124
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 1-2 · 3 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 125
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 2-3 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 126
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Trino 3-4 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 127
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 1-2-3-4 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 128
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Dedos 4-3-2-1 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 129
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Escalera 1-2-3-4-3-2 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 130
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violin",
+        "nombre": "Saltos 1-3-2-4 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 131
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Al aire y dedos 0-1-2-3 · 2 alto",
+        "dificultad": "facil",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 100
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 1-2 · 2 alto",
+        "dificultad": "facil",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 101
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 2-3 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 102
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 3-4 · 2 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 103
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 1-2-3-4 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 104
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 4-3-2-1 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 105
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Escalera 1-2-3-4-3-2 · 2 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 106
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Saltos 1-3-2-4 · 2 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"2 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 107
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Al aire y dedos 0-1-2-3 · 2 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 108
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 1-2 · 2 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 109
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 2-3 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 110
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 3-4 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 111
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 1-2-3-4 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 112
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 4-3-2-1 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 113
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Escalera 1-2-3-4-3-2 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 114
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Saltos 1-3-2-4 · 2 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 2 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"2 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 115
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Al aire y dedos 0-1-2-3 · 1 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 116
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 1-2 · 1 bajo",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 117
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 2-3 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 118
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 3-4 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 119
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 1-2-3-4 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 120
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 4-3-2-1 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 121
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Escalera 1-2-3-4-3-2 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 122
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Saltos 1-3-2-4 · 1 bajo",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 1 bajo. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"1 bajo\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 123
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Al aire y dedos 0-1-2-3 · 3 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 124
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 1-2 · 3 alto",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 125
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 2-3 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 126
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Trino 3-4 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 127
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 1-2-3-4 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 128
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Dedos 4-3-2-1 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 129
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Escalera 1-2-3-4-3-2 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 130
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "viola",
+        "nombre": "Saltos 1-3-2-4 · 3 alto",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en 3 alto. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"3 alto\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 131
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Al aire y dedos 0-1-2-3 · primera posición",
+        "dificultad": "facil",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 100
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Trino 1-2 · primera posición",
+        "dificultad": "facil",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 101
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Trino 2-3 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 102
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Trino 3-4 · primera posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 103
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Dedos 1-2-3-4 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 104
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Dedos 4-3-2-1 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 105
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Escalera 1-2-3-4-3-2 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 106
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Saltos 1-3-2-4 · primera posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 107
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Al aire y dedos 0-1-2-3 · extensión",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,3],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 108
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Trino 1-2 · extensión",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 109
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Trino 2-3 · extensión",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-3-2-3 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,3,2,3],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 110
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Trino 3-4 · extensión",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 3-4-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[3,4,3,4],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 111
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Dedos 1-2-3-4 · extensión",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 112
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Dedos 4-3-2-1 · extensión",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-3-2-1 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,3,2,1],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 113
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Escalera 1-2-3-4-3-2 · extensión",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-3-4-3-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,3,4,3,2],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 114
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "violonchelo",
+        "nombre": "Saltos 1-3-2-4 · extensión",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-3-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en extensión. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,3,2,4],\"marco\":\"extensión\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 115
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Al aire y dedos 0-1-2-4 · primera posición",
+        "dificultad": "facil",
+        "descripcion": "Patrón 0-1-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,4],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 100
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Trino 1-2 · primera posición",
+        "dificultad": "facil",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 101
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Trino 2-4 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 2-4-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,4,2,4],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 102
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Dedos 1-2-4 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-4-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,4,2],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 103
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Dedos 4-2-1 · primera posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 4-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,2,1,2],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 104
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Saltos 1-4-2-4 · primera posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-4-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en primera posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,4,2,4],\"marco\":\"primera posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 105
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Al aire y dedos 0-1-2-4 · media posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 0-1-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en media posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[0,1,2,4],\"marco\":\"media posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 106
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Trino 1-2 · media posición",
+        "dificultad": "intermedio",
+        "descripcion": "Patrón 1-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en media posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,1,2],\"marco\":\"media posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 107
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Trino 2-4 · media posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 2-4-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en media posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[2,4,2,4],\"marco\":\"media posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 108
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Dedos 1-2-4 · media posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-2-4-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en media posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,2,4,2],\"marco\":\"media posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 109
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Dedos 4-2-1 · media posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 4-2-1-2 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en media posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[4,2,1,2],\"marco\":\"media posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 110
+    },
+    {
+        "categoria": "tecnica_mano_izquierda",
+        "instrumento": "contrabajo",
+        "nombre": "Saltos 1-4-2-4 · media posición",
+        "dificultad": "dificil",
+        "descripcion": "Patrón 1-4-2-4 repetido 4 veces en cada cuerda, de la más grave a la más aguda, con la mano en media posición. Para velocidad y precisión de los dedos.",
+        "datos": "{\"tipo\":\"patron_dedos\",\"dedos\":[1,4,2,4],\"marco\":\"media posición\",\"repeticiones\":4,\"figura\":\"corchea\",\"compas\":\"4\\/4\"}",
+        "activo": true,
+        "orden": 111
+    }
+]

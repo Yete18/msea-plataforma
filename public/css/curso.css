@@ -1,0 +1,20 @@
+/* MSEA · Página de un curso del estudiante (tokens de tokens.css). */
+.curso-page { max-width: 900px; margin: 0 auto; padding: var(--e-6) var(--e-4) var(--e-12); display: grid; gap: var(--e-4); }
+.curso-barra { display: flex; justify-content: space-between; align-items: center; gap: var(--e-3); }
+.curso-head { display: flex; gap: var(--e-4); align-items: flex-start; }
+.curso-head > div { flex: 1; min-width: 0; display: grid; gap: var(--e-2); }
+.curso-head h1 { font-size: var(--t-xl); }
+.curso-head p { color: var(--texto-2); }
+.curso-head .hint { font-weight: 700; }
+.modulo { display: grid; gap: var(--e-3); }
+.modulo h2 { font-size: var(--t-lg); }
+.leccion { border: 1px solid var(--borde); border-radius: var(--r-md); background: var(--superficie); }
+.leccion.completada { background: var(--menta); }
+.leccion summary { display: flex; gap: var(--e-3); align-items: center; min-height: 52px; padding: var(--e-3) var(--e-4); cursor: pointer; font-weight: 800; list-style: none; }
+.leccion summary::-webkit-details-marker { display: none; }
+.leccion summary .estado-tag { margin-left: auto; }
+.leccion-cuerpo { padding: 0 var(--e-4) var(--e-4); display: grid; gap: var(--e-4); }
+.leccion-texto { line-height: 1.65; max-width: 70ch; }
+.pregunta { border-top: 1px dashed var(--borde); padding-top: var(--e-3); }
+.leccion-cuerpo .btn-msea { justify-self: start; }
+@media (max-width: 600px) { .curso-head { flex-direction: column; } }
